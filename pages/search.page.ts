@@ -7,15 +7,14 @@ export class SearchPage {
 
     constructor(page: Page) {
         this.page = page;
-        this.resultsContainer=page.locator('[data-search-results-container]');
-        this.sortDropdown=page.locator('[data-sort-by-menu-desktop]');
+        this.resultsContainer = page.locator('[data-search-results-container]');
+        this.sortDropdown = page.locator('[data-sort-by-menu-desktop]');
 
     }
 
     async goto() {
         await this.page.goto('https://www.etsy.com/search');
     }
-
 
 
     async sortBy(sortType: string) {

@@ -8,7 +8,7 @@ export class HomePage {
     constructor(page: Page) {
         this.page = page;
         this.searchBar = page.locator('#global-enhancements-search-query');
-        this.searchButton=page.locator('[data-id="gnav-search-submit-button"]');
+        this.searchButton = page.locator('[data-id="gnav-search-submit-button"]');
 
     }
 
