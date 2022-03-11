@@ -9,7 +9,6 @@ export class HomePage {
         this.page = page;
         this.searchBar = page.locator('#global-enhancements-search-query');
         this.searchButton = page.locator('[data-id="gnav-search-submit-button"]');
-
     }
 
     async goto() {
@@ -17,7 +16,10 @@ export class HomePage {
     }
 
     async acceptCookies() {
-        await this.page.locator('#gdpr-single-choice-overlay .wt-overlay__footer .wt-btn--filled').click();
+        const element = await this.page.$$('#gdpr-single-choice-overlay');
+        if (element) {
+            await this.page.locator('#gdpr-single-choice-overlay .wt-overlay__footer .wt-btn--filled').click();
+        }
     }
 
     async searchBy(text: string) {
