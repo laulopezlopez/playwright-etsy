@@ -17,7 +17,7 @@ export class HomePage {
 
     async acceptCookies() {
         const element = await this.page.$$('#gdpr-single-choice-overlay');
-        if (element) {
+        if (element.length) {
             await this.page.locator('#gdpr-single-choice-overlay .wt-overlay__footer .wt-btn--filled').click();
         }
     }
